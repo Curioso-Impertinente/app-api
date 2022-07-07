@@ -1,0 +1,152 @@
+{
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "prettier",
+      "graphql",
+      "@typescript-eslint",
+      "import",
+      "simple-import-sort"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "env": {
+      "browser": true,
+      "amd": true,
+      "node": true,
+      "es6": true,
+    },
+    "rules": {
+      "prettier/prettier": ["error"],
+
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/prefer-to-have-length": "warn",
+      "jest/valid-expect": "error",
+
+      "no-nested-ternary": "error",
+
+      "complexity": ["error"],
+
+      "no-else-return": ["error", { "allowElseIf": false }],
+
+      "prefer-template": "error",
+
+      "eqeqeq": ["error", "smart"],
+
+      "curly": ["error"],
+
+      "require-await": "error",
+
+      "lines-between-class-members": ["error", "always"],
+
+      "padding-line-between-statements": [
+        "error",
+        {
+          "blankLine": "always",
+          "prev": ["import", "block-like"],
+          "next": "*"
+        },
+        {
+          "blankLine": "any",
+          "prev": "import",
+          "next": "import"
+        },
+        {
+          "blankLine": "always",
+          "prev": "*",
+          "next": ["export", "return", "expression"]
+        },
+        {
+          "blankLine": "never",
+          "prev": "block-like",
+          "next": "default"
+        },
+        {
+          "blankLine": "never",
+          "prev": "block-like",
+          "next": "case"
+        }
+      ],
+
+      "sort-imports": "off",
+
+      "import/no-unresolved": [
+        "error",
+        { "commonjs": true, "amd": true, "caseSensitive": true }
+      ],
+      "import/order": "off",
+      "import/namespace": ["error", { "allowComputed": true }],
+
+      "simple-import-sort/imports": [
+        "error",
+        {
+          "groups": [
+            // Side effect imports.
+            ["^\\u0000"],
+            // third party packages
+            ["^(@\\w)", "^(\\w)"],
+            // Relative imports. Put . last.
+            [
+              "^\\.\\.(?!/?$)",
+              "^\\.\\./?$",
+              "^\\./(?=.*/)(?!/?$)",
+              "^\\.(?!/?$)",
+              "^\\./?$"
+            ]
+          ]
+        }
+      ]
+    },
+    "overrides": [
+      {
+        "files": ["*.js"],
+        "rules": {
+          "@typescript-eslint/explicit-module-boundary-types": "off",
+          "@typescript-eslint/no-var-requires": "off"
+        }
+      },
+      {
+        "files": ["cypress/**/*.ts"],
+        "rules": {
+          "jest/valid-expect": "off"
+        }
+      },
+      {
+        "files": ["*.ts"],
+        "rules": {
+          "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+              "vars": "all",
+              "args": "after-used",
+              "ignoreRestSiblings": true,
+              "argsIgnorePattern": "^_[a-z|A-Z]"
+            }
+          ],
+
+          "@typescript-eslint/no-floating-promises": "error"
+        },
+        "parserOptions": {
+          "ecmaVersion": 2020,
+          "project": ["tsconfig.json"],
+          "sourceType": "module"
+        }
+      }
+    ],
+    "settings": {
+      "import/parsers": {
+        "@typescript-eslint/parser": [".ts"]
+      },
+      "import/resolver": {
+        // use <root>/tsconfig.json
+        "typescript": {
+          "alwaysTryTypes": true // always try to resolve types under <root>@types directory even it doesn't contain any source code, like @types/unist
+        }
+      }
+    }
+  }

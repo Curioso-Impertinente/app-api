@@ -1,0 +1,25 @@
+{
+  "name": "app-curimp-api",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.9.0",
+    "graphql": "^16.5.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.1",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  }
+}

@@ -1,0 +1,55 @@
+const feedData = [
+  {
+    type: 'note',
+    id: '001',
+    title: 'First note',
+    body: '# Nasceu o Tomás\n* **peso**: 3.180g\n* **altura**: 51cm',
+    date: '2022-04-26',
+    tags: ['Tomas'],
+  },
+  {
+    type: 'youtube',
+    id: '002',
+    link: 'P3nuGTbF-Is',
+    body: 'Este video é espetacular, caralho!',
+    date: '2022-05-01',
+    timestamp: '128',
+    tags: ['video', 'espetaculo', 'caralho'],
+  },
+  {
+    type: 'spotify',
+    id: '003',
+    link: 'https://open.spotify.com/episode/0w15iRmlsOpIvF0x5Rtymy',
+    body: 'Este podcast é grande merda, caralho!',
+    date: '2022-06-01',
+    timestamp: '128',
+    tags: ['JRE', 'AlexJones', 'lizardPeople'],
+  },
+  {
+    type: 'code',
+    id: '004',
+    code: 'import random\n\nprint(random.randint(0,22))',
+    title: 'Generate random number in Python',
+    language: 'python',
+    date: '2022-06-01',
+    tags: ['react', 'js', 'frontend'],
+  },
+  {
+    type: 'link',
+    id: '005',
+    link: '',
+    body: 'This is a link type with a body field',
+    date: '2022-06-01',
+    tags: ['', '', ''],
+  },
+  {
+    type: 'note',
+    id: '006',
+    title: 'Another note',
+    body: 'Sou uma pequena nota',
+    date: '2022-04-26',
+    tags: ['outracoisa'],
+  },
+];
+
+export default feedData;
